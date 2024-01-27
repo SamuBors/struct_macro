@@ -1,7 +1,7 @@
 clear
 clc
 cd '/Users/samueleborsini/Library/Mobile Documents/com~apple~CloudDocs/Università/Economics and econometrics/II anno/Structural Macroeconometrics/Paper/final'
-addpath functions % functions folder
+addpath functions/3R % functions folder
 data=readtable("Data_Set.csv"); % data
 
 %% estimation
@@ -113,6 +113,7 @@ pvalH0_1=1-chi2cdf(2*(lk_H0_1-All.Lk),df); %under H0', the VAR estimated in All 
 disp(['Testing sigma constant across periods given constant Pi gives a pvalue of ' num2str(pvalH0_1)]) 
 
 %% SVAR (upper)
+disp(' ')
 disp('Upper (macro uncertainty endogenous and bidirectionality between macro and financial uncertainty):')
 initialvalues=[0.0112;-0.1377;0.0003;0.7540;-0.0259;-0.0037;0.0470;-0.0047;-0.2927;0.0040;0.0535;-0.0318;0.1355;0.0014;-0.0839;-0.0066]; %initial values (the first 16 are the estimates obtain by ABCF, we set the new parameters initial value equal to 0)
 
@@ -211,6 +212,7 @@ disp(['The rank of the Jacobian is ' num2str(rank(Jacobian)) ' and the number of
 SVAR_U=SVAR; % storing the results
 
 %% SVAR (lower)
+disp(' ')
 disp('Lower (macro uncertainty exogenous and unidirectionality from financial to macro uncertainty):')
 initialvalues=[0.0112;-0.1377;0.7540;-0.0259;-0.0037;0.0470;-0.2927;0.0040;0.0535;-0.0318;0.1355;0.0014;-0.0839;-0.0066]; %initial values (the first 16 are the estimates obtain by ABCF, we set the new parameters initial value equal to 0)
 

@@ -1,7 +1,7 @@
 clear
 clc
 cd '/Users/samueleborsini/Library/Mobile Documents/com~apple~CloudDocs/Università/Economics and econometrics/II anno/Structural Macroeconometrics/Paper/final'
-addpath functions % functions folder
+addpath functions/4R % functions folder
 data=readtable("Data_Set.csv"); % data
 
 %% estimation
@@ -763,10 +763,6 @@ for i=1:4
     end
     saveas(F,['images/IRF_' num2str(i) 'R_4regimes.png'])
 end
-
-%% notes
-% B, B2, B3 and B4 in upper, lower and proposal (both in up to 2023 and here)
-% sigmas and correlation matrix
 
 %% pvalues
 
